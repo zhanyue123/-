@@ -1,0 +1,20 @@
+<h2>作者图书</h2>
+
+<form method="post">
+    {{ form.csrf_token }}
+    <p>作者：{{ form.author }}</p>
+    <p>书名：{{ form.book }}</p>
+    <p>{{ form.submit }}</p>
+
+
+</form>
+
+{# 接收视图返回的数据，渲染数据 #}
+
+<ul>
+    <li>{% for index in auth %}</li>
+    <li>{{ index }}</li> <a href="/delete_author{{ index.id }}">删除</a>
+    <li>{% endfor %}</li>
+</ul>
+
+
