@@ -8,18 +8,6 @@ app = Flask(__name__)
 
 '''
 流程：
-1.模板：render_template
-2.表单：wtf，
-3.数据库
-4.视图
-5.实现删除数据
-'''
-
-app = Flask(__name__)
-# 配置密似
-app.config['SECRET_KEY'] = '4psbwnFUP1akINFeWT3LdLV6hO10P7cRpvpvTMJXgQA=='
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mysql@localhost/author_book'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # 给app赋予了的ORM操作的能力
 db = SQLAlchemy(app)
 # 定义表单类
@@ -55,29 +43,12 @@ def index():
             db.session.add_all([au])
             db.session.commit()
 
-        except Exception as e:
-            print(e)
+        except Excepti333333333333333333333333333333333333
 
-            db.session.rollback()
-        auth = Author.query.all()
+33333333333333333333333333333333333333333333333333V
 
+33333333333333333333333333333333333
 
-    return render_template("author.html",form=form,auth=auth)
-
-@app.route('/delete<id>')
-def del_author(id):
-    author = Author.query.filter_by(id=id).first()
-    db.session.delete(author)
-    db.session.commit()
-    return render_template(url_for('index'))
-
-
-
-if __name__ == '__main__':
-    # 先删除后创建
-    db.drop_all()
-    db.create_all()
-    # 添加测试数据
     au_xi = Author(name='我吃西红柿',book='吞噬星空')
     au_qian = Author(name='萧潜',book='寸芒')
     au_san = Author(name='唐家三少',book='飘渺之旅')
