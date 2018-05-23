@@ -25,34 +25,59 @@ db = SQLAlchemy(app)
 # 定义表单类
 class Form(FlaskForm):
     author = StringField(validators=[DataRequired()])
-    book = StringField(validators=[DataRequired()])
-    submit = SubmitField(label='保持')
-
-class Author(db.Model):
-    # 定义了表名
-    __tablename__ = 'authors'
-    # 定义了数据
-    id = db.Column(db.Integer,primary_key=True)
-    name = db.Column(db.String(32),unique=True)
-    book = db.Column(db.String(32),unique=True)
-    def __repr__(self):
-        return 'author:%s' % self.name,'book:%s' % self.book
+    
 
 
 
-@app.route('/',methods=['GET','POST'])
-def index():
-    form = Form()
 
-    auth = Author.query.all()
 
-    if form.validate_on_submit():
-        wtf_auth = form.author.data
 
-        au = Author(name=wtf_auth)
 
-        try:
-            db.session.add_all([au])
+123123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12312
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1232131
             db.session.commit()
 
         except Exception as e:
